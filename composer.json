@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "ApDev\\WebSocket": "src/"
+            "ApDev\\WebSocket\\": "src/"
         }
     },
     "authors": [
@@ -13,5 +13,7 @@
             "email": "patgrudniewski@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/console": "^5.4"
+    }
 }
