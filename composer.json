@@ -1,0 +1,17 @@
+{
+    "name": "pgrudniewski/ws-php",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ApDev\\WebSocket": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Patryk Grudniewski",
+            "email": "patgrudniewski@gmail.com"
+        }
+    ],
+    "require": {}
+}
