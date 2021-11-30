@@ -11,3 +11,7 @@ COPY --from=build /app/vendor /var/www/html/vendor
 COPY . /var/www/html
 
 WORKDIR /var/www/html
+
+EXPOSE 8080
+
+CMD [ "bin/console", "server:run" ]

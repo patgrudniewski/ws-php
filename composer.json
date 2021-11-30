@@ -14,6 +14,7 @@
         }
     ],
     "require": {
-        "symfony/console": "^5.4"
+        "symfony/console": "^5.4",
+        "textalk/websocket": "^1.5"
     }
 }

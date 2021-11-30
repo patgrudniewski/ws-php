@@ -3,8 +3,11 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use ApDev\WebSocket\Command\Server\RunCommand;
 use Symfony\Component\Console\Application;
 
 $console = new Application();
+
+$console->add(new RunCommand());
 
 $console->run();
