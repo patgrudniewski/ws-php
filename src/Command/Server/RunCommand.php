@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace ApDev\WebSocket\Command\Server;
 
+use ApDev\WebSocket\Server;
+use Ratchet\App;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use WebSocket\Server;
 
 class RunCommand extends Command
 {
@@ -18,14 +19,11 @@ class RunCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $server = new Server(['port' => 8080, 'timeout' => 3600]);
-        $server->accept();
+        $app = new App('localhost', 8080, '0.0.0.0');
 
-        while ($message = $server->receive()) {
-            $output->writeln("Received message \"$message\"");
-        }
+        $app->route('/', new Server($output), ['*']);
 
-        $server->close();
+        $app->run();
 
         return Command::SUCCESS;
     }
